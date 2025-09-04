@@ -1,0 +1,46 @@
+# 🚗 Car Bazar
+
+Car Bazar is a web-based application for **buying and selling second-hand cars**.  
+It provides an easy-to-use platform for car dealers and buyers to connect, manage listings, and complete transactions.
+
+---
+
+## ✨ Features
+
+### 🔹 For Dealers
+- Register and manage profile.
+- Add, update, and delete car listings.
+- Upload car images (with VR view support planned).
+- Manage details like price, model, year, kms driven, fuel type, insurance expiry, etc.
+
+### 🔹 For Buyers
+- Browse all listed cars in a clean, responsive UI.
+- View detailed information about each car.
+- Contact sellers directly.
+- Create and manage personal profiles.
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **HTML5, CSS3, Bootstrap 5**
+- **JavaScript (ES6+)**
+- **EJS** templating engine
+
+### Backend
+- **Node.js & Express.js**
+
+### Database
+- **MongoDB with Mongoose ORM**
+
+### Other Tools
+- **Joi** for request validation
+- **Multer / Cloudinary** for image handling
+- **Bootstrap Icons & Font Awesome** for UI
+
+---
+Developed by Danish Khan 💡
+Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/danis)
+ or contribute to this project.
+
