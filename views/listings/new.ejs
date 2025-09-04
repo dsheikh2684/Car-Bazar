@@ -1,0 +1,89 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <div class="form-container">
+    <h3>Add New Car</h3>
+    <form method="POST" action="/listings" class="needs-validation" novalidate>
+      <!-- Make -->
+      <div class="mb-3">
+        <label for="make" class="form-label">Make</label>
+        <input type="text" name="listing[name]" id="make" class="form-control" placeholder="Enter Car Brand" required>
+      </div>
+
+      <!-- Model -->
+      <div class="mb-3">
+        <label for="model" class="form-label">Model</label>
+        <input type="text" name="listing[model]" id="model" class="form-control" placeholder="Enter Car Model" required>
+      </div>
+      <!-- Image -->
+      <div class="mb-3">
+        <label class="form-label" for="image">Image URL</label>
+        <input type="text" name="listing[image]" id="image" class="form-control" placeholder="Enter Image URL">
+      </div>
+      <div class="row">
+
+        <!-- Year of Issue -->
+        <div class="mb-3 col-md-6">
+          <label for="year" class="form-label">Year of Issue</label>
+        <input type="number" name="listing[year]" id="year"class="form-control" placeholder="Enter Year" required>
+      </div>
+      
+      <!-- Km Drive -->
+      <div class="mb-3 col-md-6">
+        <label class="form-label" for="driven">Km's Driven</label>
+        <input type="number" name="listing[kms]" id="driven"class="form-control" placeholder="Km's Driven" required>
+      </div>
+      
+      <!-- Fuel Type -->
+      <div class="mb-3 col-md-6">
+        <label class="form-label" for="fuel">Fuel Type</label>
+        <select class="form-select" id="fuel" name="listing[fuel]" required>
+          <option value="">Select Fuel Type</option>
+          <option value="Petrol">Petrol</option>
+          <option value="Diesel">Diesel</option>
+          <option value="Electric">Electric</option>
+          <option value="Hybrid">Hybrid</option>
+        </select>
+      </div>
+      
+      
+      <!-- colour -->
+      <div class="mb-3 col-md-6">
+        <label for="colour" class="form-label">Colour</label>
+        <input type="text" class="form-control"  name="listing[colour]" id="colour" placeholder="e.g. Black" required>
+      </div>
+      <!-- Owner -->
+      <div class="mb-3 col-md-6">
+        <label for="owners" class="form-label">Number of Owners</label>
+        <select class="form-select" name="listing[owner]" id="owners" required>
+          <option value="">Select</option>
+          <option value="First">First</option>
+          <option value="Second">Second</option>
+          <option value="Third">Third</option>
+        </select>
+      </div>
+      <!-- Insurance Type -->
+      <div class="mb-3 col-md-6">
+        <label for="insuranceType" class="form-label">Insurance Type</label>
+        <select class="form-select" name="listing[insurance]" id="insuranceType" required>
+          <option value="">Not Available</option>
+          <option value="Zero Depreciation">Zero Depreciation</option>
+          <option value="Comprehensive">Comprehensive</option>
+          <option value="Third Party">Third Party</option>
+        </select>
+      </div>
+      <!-- Insurance Expiry -->
+      <div class="mb-3 col-md-6">
+        <label for="insuranceExpiry" class="form-label">Insurance Expiry</label>
+        <input type="date" class="form-control" name="listing[i_expiry]" id="insuranceExpiry" placeholder="Select expiry date" required onblur="setNotAvailableIfEmpty(this)">
+      </div>
+      <!-- Price -->
+      <div class="mb-3 col-md-6">
+        <label class="form-label" for="price">Price (₹)</label>
+        <input type="number" name="listing[price]" id="price" required class="form-control" placeholder="Enter Price">
+      </div>
+    </div>
+      <!-- Submit -->
+      <button type="submit" class="btn btn-save">Save Car</button>
+    </form>
+  </div>
+</body>

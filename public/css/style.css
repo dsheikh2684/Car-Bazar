@@ -1,0 +1,145 @@
+a{
+    text-decoration: none !important;
+    display: inline !important;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-wrap {
+  flex: 1; /* pushes footer down */
+}
+.navbar-brand{
+    margin: 0;
+}
+.fab{
+    color: black;
+}
+footer{
+    margin-top: auto;
+    bottom: 0;
+    text-align: center !important;
+    align-items: center !important;
+}
+/* .car{
+    margin:5px,2.5px,0,2.5px !important;
+} */
+.car-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border-radius: 12px;
+      width: 300px;
+      overflow: hidden;
+      
+    }
+    .car-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.2);
+    }
+    .car-card img {
+      height: 200px;
+      object-fit: cover;
+    }
+  /* Update page */
+   .form-section {
+      flex: 1;
+      padding: 30px;
+    }
+
+    .form-section h2 {
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    form label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    form input, form select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    form input[disabled] {
+      background: #f1f1f1;
+      color: #777;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    /* button:hover {
+      background: #fafafa;
+    } */
+.car-image {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+    .car-details {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .price {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #198754;
+    }
+    .details-table td {
+      padding: 8px 12px;
+      border-bottom: 1px solid #e9ecef;
+    }
+  .form-container {
+      /* max-width: 500px; */
+      margin: 50px 150px 50px 150px;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .form-container h3 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+    .form-control, .form-select {
+      /* border: !important; */
+      border-radius: 10px !important;
+      box-shadow: none !important;
+    }
+    .form-control:focus, .form-select:focus {
+      border-color: #000000 !important;
+      box-shadow: none;
+    }
+    .btn-save {
+      background: hsl(0, 93%, 44%) !important;
+      color: #fff !important;
+      font-weight: bold !important;
+      border-radius: 25px !important;
+      padding: 10px !important;
+      width: 100% !important;
+      margin-top: 20px !important;
+      transition: 0.3s !important;
+    }
+    .btn-save:hover {
+      background: #ff1900 !important;
+    }

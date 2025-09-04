@@ -1,0 +1,94 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <div class="container my-5">
+    <div class="row g-4">
+      
+      <!-- Car Image -->
+      <div class="col-lg-6">
+        <img src="<%=data.image%>" alt="Car Image" class="car-image">
+      </div>
+
+      <!-- Car Details -->
+      <div class="col-md-6">
+        <div class="car-details">
+        <div class="container mt-4">
+  <form class="update-form needs-validation" novalidate method="POST" action="/listings/<%=data._id%>?_method=PUT">
+    <!-- Full width -->
+    <div class="mb-1">
+      <label for="name" class="form-label">Car Brand</label>
+      <input type="text" class="form-control" id="name" name="listing[name]" value="<%=data.name%>">
+    </div>
+
+    <div class="mb-1">
+      <label for="model" class="form-label">Car Model</label>
+      <input type="text" class="form-control" id="model" name="listing[model]" value="<%=data.model%>">
+    </div>
+    <div class="mb-1">
+      <label for="image" class="form-label">Image Url</label>
+      <input type="text" class="form-control" id="image" name="listing[image]" value="<%=data.image%>" required>
+    </div>
+    <!-- Two per row -->
+    <div class="row">
+      <div class="col-md-6">
+        <label for="year" class="form-label">Manufacturing Year</label>
+        <input type="number" class="form-control" id="year" value="<%=data.year%>" name="listing[year]" required>
+      </div>
+
+      <div class="col-md-6">
+        <label for="kms" class="form-label">Kms Driven</label>
+        <input type="number" class="form-control" id="kms" value="<%=data.kms%>" name="listing[kms]" required>
+      </div>
+
+      <div class="col-md-6">
+        <label for="fuel" class="form-label">Fuel Type</label>
+        <select class="form-select" id="<%=data.fuel%>" name="listing[fuel]" required>
+          <option selected>Diesel</option>
+          <option>Petrol</option>
+          <option>CNG</option>
+          <option>Electric</option>
+        </select>
+      </div>
+
+      <div class="col-md-6">
+        <label for="colour" class="form-label">Colour</label>
+        <input type="text" class="form-control" id="colour" required value="<%=data.colour%>" name="listing[colour]">
+      </div>
+
+      <div class="col-md-6">
+        <label for="owner" class="form-label">Number of Owners</label>
+        <select class="form-select" id="owner" name="listing[owner]" required>
+          <option selected>First</option>
+          <option>Second</option>
+          <option>Third</option>
+        </select>
+      </div>
+
+      <div class="col-md-6">
+        <label for="insuranceType" class="form-label">Insurance Type</label>
+        <select class="form-select" name="listing[insurance]" id="insuranceType" required value="<%=data.insurance%>">
+          <option value="">Not Available</option>
+          <option value="Zero Depreciation">Zero Depreciation</option>
+          <option value="Comprehensive">Comprehensive</option>
+          <option value="Third Party">Third Party</option>
+        </select>
+      </div>
+
+      <div class="col-md-6">
+        <label for="i_expiry" class="form-label">Insurance Expiry</label>
+        <input type="date" class="form-control" id="i_expiry" required value="<%= data.i_expiry.toISOString().split('T')[0] %>" name="listing[i_expiry]">
+      </div>
+
+      <div class="col-md-6">
+        <label for="price" class="form-label">Price</label>
+        <input type="number" class="form-control" id="price"  required value="<%=data.price%>" name="listing[price]">
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-success w-100">Update Car</button>
+  </form>
+        </div>
+    </div>
+  </div>
+  </div>
+  </div>
+</body>

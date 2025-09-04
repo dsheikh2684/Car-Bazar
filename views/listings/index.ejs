@@ -1,0 +1,23 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <div class="container">
+    <div class="row g-2 mt-3">
+        <% for(let car of listings){ %>
+            <!-- Card 1 -->
+             <a class="col-12 col-md-6 col-lg-4 mt-3" href="/listings/<%=car._id%>" >
+                    <div class="card car-card ">
+                    <img src="<%=car.image%>" class="card-img-top" alt="Car Image">
+                    <div class="card-body">
+                        <h5 class="card-title"><%=car.name%></h5>
+                        <p class="card-text mb-1"><strong>Model:</strong> <%=car.model%></p>
+                        <p class="card-text mb-1"><strong>Year:</strong> <%=car.year%></p>
+                        <p class="card-text text-success"><strong>Price:</strong> <%=car.price.toLocaleString("en-IN")%></p>
+                    </div>
+                    </div>
+             </a>
+        <%}%>
+    </div>
+    </div>
+</body>
+
+

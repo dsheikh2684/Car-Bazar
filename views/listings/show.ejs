@@ -1,0 +1,39 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <!-- Car Detail Section -->
+  <div class="container my-5">
+    <div class="row g-4">
+      
+      <!-- Car Image -->
+      <div class="col-lg-6">
+        <img src="<%=carData.image%>" alt="Car Image" class="car-image">
+      </div>
+
+      <!-- Car Details -->
+      <div class="col-md-6">
+        <div class="car-details">
+          <h2><%=carData.name%> <%=carData.model%></h2>
+          <p class="price">₹ <%=carData.price.toLocaleString("en-IN")%></p>
+          
+          <h5 class="mt-4">Car Details</h5>
+          <table class="details-table w-100">
+            <tr><td><strong>Fuel Type:</strong></td><td><%=carData.fuel%></td></tr>
+            <tr><td><strong>Kms Driven:</strong></td><td><%=carData.kms%> Kms</td></tr>
+            <tr><td><strong>Colour:</strong></td><td><%=carData.colour%></td></tr>
+            <tr><td><strong>Number of Owners:</strong></td><td><%=carData.owner%></td></tr>
+            <tr><td><strong>Insurance Type:</strong></td><td><%=carData.insurance%></td></tr>
+            <tr><td><strong>Insurance Expiry:</strong></td><td><%=carData.i_expiry.toLocaleDateString()%></td></tr>
+            <tr><td><strong>Manufacturing Year:</strong></td><td><%=carData.year%></td></tr>
+          </table>
+        </div>
+        <br/>
+        <a class="btn btn-danger" href="/listings/<%=carData._id%>/edit">Update</a>
+        <form class="d-inline-block" method="POST" action="/listings/<%=carData._id%>?_method=DELETE">
+            <button class="btn btn-dark">Delete</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+</body>
