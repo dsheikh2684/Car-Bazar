@@ -8,7 +8,21 @@ const ejsMate=require("ejs-mate");
 const { stat } = require("fs");
 const { env } = require("process");
 require('dotenv').config();
+const session=require("express-session");
 
+let sessionVariables={
+    secret:`${env.secret}`,
+    resave: false,
+    saveUninitialized: true
+};
+app.use(session(sessionVariables));
+const flash=require("connect-flash");
+app.use(flash());
+app.use((req,res,next)=>{
+    res.locals.succMsg=req.flash("success");
+    res.locals.errMsg=req.flash("error");
+    next();
+})
 //ser view engine as ejs
 app.set("view engine","ejs");
 
@@ -45,9 +59,3 @@ app.get("/",(req,res)=>{
 
 app.use("/listings",listing);
 
-
-// //middleware
-app.use((err,req,res,next)=>{
-    let {statusCode=500,message="Somethig Went Wrong"}=err; 
-    res.status(statusCode).render("../error.ejs",{err});
-});

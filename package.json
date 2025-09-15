@@ -1,14 +1,20 @@
 {
+  "name": "Car Bazar",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Danish Khan",
+  "license": "ISC",
   "dependencies": {
+    "connect-flash": "^0.1.1",
     "dotenv": "^17.2.2",
     "ejs": "^3.1.10",
     "ejs-mate": "^4.0.0",
     "express": "^5.1.0",
+    "express-session": "^1.18.2",
     "joi": "^18.0.1",
     "method-override": "^3.0.0",
     "mongoose": "^8.18.0",
     "node": "^24.6.0",
-    "nodemon": "^3.1.10",
-    "author":"Danish Khan"
+    "nodemon": "^3.1.10"
   }
 }

@@ -1,0 +1,14 @@
+<!-- Success Msg -->
+<% if(succMsg && succMsg.length) {%>
+    <div class="alert alert-success col-6 offset-3 alert-dismissible fade show pb-1 mt-2" role="alert">
+        <p><%=succMsg%></p>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<%}%>
+<!-- Error Msg -->
+<% if(errMsg && errMsg.length) {%>
+    <div class="alert alert-danger col-6 offset-3 alert-dismissible fade show pb-1 mt-2" role="alert">
+        <p><%=errMsg%></p>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<%}%>

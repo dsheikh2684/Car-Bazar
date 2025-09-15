@@ -1,27 +1,34 @@
 const express=require("express");
+const app=express();
 const router=express.Router();
 const asyncWrap=require("../utils/wrapAsync.js");
 const car=require("../models/cars");
 const {listingSchema}=require("../schema.js");
 const ExpressError=require("../utils/expressError.js");
 
+
+
 //listing route
 router.get("/",asyncWrap(async (req,res,next)=>{
     const listings= await car.find({});
-    // console.log(listings);
     res.render("listings/index.ejs",{listings});
 }));
 //add car route
 router.get("/new",(req,res)=>{
-    console.log("request generated"); 
+    // console.log("request generated"); 
     res.render("listings/new.ejs");
 })
 //show route
 router.get("/:id",asyncWrap(async(req,res,next)=>{
     const {id}=req.params;
     const carData=await car.findById(id);
-    console.log(carData);
-    res.render("listings/show.ejs",{carData});
+    if(carData===null){
+        req.flash("error","This Car is no longer exist");
+        res.redirect("/listings");
+    }
+    // console.log(carData);
+    else
+        res.render("listings/show.ejs",{carData});
 }));
 //middleware
 const validateListing=(req,res,next)=>{
@@ -42,6 +49,7 @@ router.post("/",validateListing,asyncWrap(async (req,res,next)=>{
     const newCar=new car(listing);
     console.log(newCar);
     await newCar.save();
+    req.flash("success","Car Added successfully");
     res.redirect("/listings");
     
 }));
@@ -49,7 +57,7 @@ router.post("/",validateListing,asyncWrap(async (req,res,next)=>{
 router.get("/:id/edit",asyncWrap(async (req,res,next)=>{
     const {id}=req.params;
     const data=await car.findById(id);
-    console.log(data);
+    
     res.render("listings/edit.ejs",{data});
 }));
 router.put("/:id",validateListing,asyncWrap(async (req,res,next)=>{
@@ -58,12 +66,19 @@ router.put("/:id",validateListing,asyncWrap(async (req,res,next)=>{
     console.log(id);
     console.log(req.body.listing);
     await car.findByIdAndUpdate(id,{...req.body.listing});
+    req.flash("success","Car Updated Successfully");
     res.redirect(`/listings/${id}`);
 }));
+//Delete route
 router.delete("/:id",asyncWrap(async (req,res,next)=>{
     const {id}=req.params;
     await car.findByIdAndDelete(id);
+    req.flash("success","Car Deleted Successfully");
     res.redirect("/listings");
 }));
-
+// //middleware
+router.use((err,req,res,next)=>{
+    let {statusCode=500,message="Somethig Went Wrong"}=err; 
+    res.status(statusCode).render("../error.ejs",{err});
+});
 module.exports=router;
