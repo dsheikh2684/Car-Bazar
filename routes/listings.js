@@ -57,8 +57,12 @@ router.post("/",validateListing,asyncWrap(async (req,res,next)=>{
 router.get("/:id/edit",asyncWrap(async (req,res,next)=>{
     const {id}=req.params;
     const data=await car.findById(id);
-    
-    res.render("listings/edit.ejs",{data});
+    if(data===null){
+        req.flash("error","This Car is not exist");
+        res.redirect("/listings");
+    }
+    else
+        res.render("listings/edit.ejs",{data});
 }));
 router.put("/:id",validateListing,asyncWrap(async (req,res,next)=>{
     const {id}=req.params;
@@ -79,6 +83,6 @@ router.delete("/:id",asyncWrap(async (req,res,next)=>{
 // //middleware
 router.use((err,req,res,next)=>{
     let {statusCode=500,message="Somethig Went Wrong"}=err; 
-    res.status(statusCode).render("../error.ejs",{err});
+    res.status(statusCode).render("../error/listingError.ejs",{err});
 });
 module.exports=router;

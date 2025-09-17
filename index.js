@@ -3,13 +3,16 @@ const app=express();
 const PORT=8080;    
 const mongoose=require("mongoose");
 const listing=require("./routes/listings.js");
+const user=require("./routes/users.js");
 const path = require("path");
 const ejsMate=require("ejs-mate");
 const { stat } = require("fs");
 const { env } = require("process");
 require('dotenv').config();
 const session=require("express-session");
-
+const passport=require("passport");
+const LocalStrategy=require("passport-local");
+const User=require("./models/user.js");
 let sessionVariables={
     secret:`${env.secret}`,
     resave: false,
@@ -17,6 +20,15 @@ let sessionVariables={
 };
 app.use(session(sessionVariables));
 const flash=require("connect-flash");
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+
 app.use(flash());
 app.use((req,res,next)=>{
     res.locals.succMsg=req.flash("success");
@@ -30,6 +42,7 @@ app.set("views",path.join(__dirname,"views"));
 app.use(express.urlencoded({extended:true}));
 
 const methodOverride=require("method-override");
+const { name } = require("ejs");
 app.use(methodOverride("_method"));
 app.engine("ejs",ejsMate);
 
@@ -58,4 +71,15 @@ app.get("/",(req,res)=>{
 });
 
 app.use("/listings",listing);
+app.use("/user",user);
+// app.get("/demoUser",async(req,res)=>{
+//     let demoUser=new User({
+//         email:"buyer@gmail.com",
+//         username:"Buyer2"
+//     });
+
+//     let user=await User.register(demoUser,"Password1122");
+//     console.log(user);
+//     res.send("User Saved");
+// })
 
