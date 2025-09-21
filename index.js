@@ -33,6 +33,7 @@ app.use(flash());
 app.use((req,res,next)=>{
     res.locals.succMsg=req.flash("success");
     res.locals.errMsg=req.flash("error");
+    res.locals.currUser=req.user;
     next();
 })
 //ser view engine as ejs

@@ -5,7 +5,7 @@ const asyncWrap=require("../utils/wrapAsync.js");
 const car=require("../models/cars");
 const {listingSchema}=require("../schema.js");
 const ExpressError=require("../utils/expressError.js");
-
+const {isLoggedIn}=require("../middleware.js");
 
 
 //listing route
@@ -13,11 +13,14 @@ router.get("/",asyncWrap(async (req,res,next)=>{
     const listings= await car.find({});
     res.render("listings/index.ejs",{listings});
 }));
+
 //add car route
-router.get("/new",(req,res)=>{
-    // console.log("request generated"); 
+router.get("/new",isLoggedIn,(req,res)=>{
+    // console.log(req.user);
+    // console.log("request generated");
     res.render("listings/new.ejs");
-})
+});
+
 //show route
 router.get("/:id",asyncWrap(async(req,res,next)=>{
     const {id}=req.params;
@@ -27,8 +30,11 @@ router.get("/:id",asyncWrap(async(req,res,next)=>{
         res.redirect("/listings");
     }
     // console.log(carData);
-    else
-        res.render("listings/show.ejs",{carData});
+    else{
+        let currUser=res.locals.currUser;
+        // console.log(currUser);
+        res.render("listings/show.ejs",{carData,currUser});
+    }
 }));
 //middleware
 const validateListing=(req,res,next)=>{
@@ -47,6 +53,7 @@ router.post("/",validateListing,asyncWrap(async (req,res,next)=>{
     const listing=req.body.listing;
     console.log(listing);
     const newCar=new car(listing);
+    newCar.dealer=res.locals.currUser;
     console.log(newCar);
     await newCar.save();
     req.flash("success","Car Added successfully");
@@ -54,7 +61,7 @@ router.post("/",validateListing,asyncWrap(async (req,res,next)=>{
     
 }));
 //update route
-router.get("/:id/edit",asyncWrap(async (req,res,next)=>{
+router.get("/:id/edit",isLoggedIn,asyncWrap(async (req,res,next)=>{
     const {id}=req.params;
     const data=await car.findById(id);
     if(data===null){
@@ -74,7 +81,7 @@ router.put("/:id",validateListing,asyncWrap(async (req,res,next)=>{
     res.redirect(`/listings/${id}`);
 }));
 //Delete route
-router.delete("/:id",asyncWrap(async (req,res,next)=>{
+router.delete("/:id",isLoggedIn,asyncWrap(async (req,res,next)=>{
     const {id}=req.params;
     await car.findByIdAndDelete(id);
     req.flash("success","Car Deleted Successfully");

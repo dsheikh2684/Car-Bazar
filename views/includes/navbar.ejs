@@ -7,8 +7,20 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="/listings">Home</a>
-        <a class="nav-link" href="/listings/new">Add New Car</a>
-        <a class="nav-link" href="#">Pricing</a>
+        <% if(currUser && currUser.role==="Dealer"){ %>
+          <a class="nav-link" href="/listings/new">Add New Car</a>
+        <% } %>
     </div>
+    <div class="navbar-nav ms-auto">
+          <% if(!currUser){ %>
+
+            <a class="nav-link float-right" href="/user/signup">SignUp</a>
+            <a class="nav-link float-right" href="/user/login">Login</a>
+          <%}%>
+          <% if(currUser){ %>
+            <a class="nav-link" href="/user/logout">LogOut</a>
+          <%}%>
+        </div>
+  </div>
   </div>
 </nav>

@@ -48,6 +48,10 @@ let carSchema=new Schema({
     price:{
         type:Number,
         required:true,
+    },
+    dealer:{
+        type:Schema.Types.ObjectId,
+        ref:"User",
     }
 });
 const car=new mongoose.model("car",carSchema);

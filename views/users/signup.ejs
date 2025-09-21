@@ -1,0 +1,28 @@
+<% layout("/layouts/userBoilerplate") %>
+<body>
+  <div class="login-card animate__animated animate__fadeIn">
+    <h2>Car Bazar Login</h2>
+    <form method="POST" action="/user/signup">
+      <div class="mb-3">
+        <input name="username" type="username" class="form-control" placeholder="Username" required>
+      </div>
+      <div class="mb-3">
+        <input name="email" type="email" class="form-control" placeholder="Email Address" required>
+      </div>
+       <div class="mb-3">
+            <select class="form-select form-control" id="role" name="role" required>
+              <option value="" disabled selected>Choose role</option>
+              <option value="Dealer">Dealer</option>
+              <option value="Buyer">Buyer</option>
+            </select>
+      </div>
+      <div class="mb-3">
+        <input name="password" type="password" class="form-control" placeholder="Password" required>
+      </div>
+      <button type="submit" class="btn btn-custom">SignUp</button>
+    </form>
+    <div class="extra-links">
+      <a href="/user/login">Login</a>
+    </div>
+  </div> 
+</body>

@@ -34,11 +34,15 @@
     .form-control {
       background: rgba(255,255,255,0.2);
       border: none;
-      color: #fff;
+  
       border-radius: 10px;
       padding: 12px;
     }
-
+    .form-select option {
+      background: #333;        /* dark background for dropdown */
+      color: #fff;             /* white text */
+      padding: 10px;
+    }
     .form-control:focus {
       background: rgba(255,255,255,0.3);
       box-shadow: 0 0 10px #00d4ff;
