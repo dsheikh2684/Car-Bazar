@@ -2,7 +2,7 @@
 <body>
     <div class="form-container">
     <h3>Add New Car</h3>
-    <form method="POST" action="/listings" class="needs-validation" novalidate>
+    <form method="POST" action="/listings" class="needs-validation" novalidate enctype="multipart/form-data">
       <!-- Make -->
       <div class="mb-3">
         <label for="make" class="form-label">Make</label>
@@ -17,7 +17,8 @@
       <!-- Image -->
       <div class="mb-3">
         <label class="form-label" for="image">Image URL</label>
-        <input type="text" name="listing[image]" id="image" class="form-control" placeholder="Enter Image URL">
+        <input type="file" name="listing[images]" id="image" class="form-control" placeholder="Choose Image" multiple accept="image/*"
+>
       </div>
       <div class="row">
 

@@ -38,13 +38,11 @@ let carSchema=new Schema({
         type:Date,
         required:true,
     },
-    image:{
-        type:String,
-        default:"https://www.shutterstock.com/image-photo/szczecinpolandjuly-2024bugatti-tourbillon-v16-1800-600nw-2492193479.jpg",
-        set:(v)=>
-            v===""?"https://www.shutterstock.com/image-photo/szczecinpolandjuly-2024bugatti-tourbillon-v16-1800-600nw-2492193479.jpg":v
-        
-    },
+    images:[
+        {
+            url:String,
+            filename:String,
+        }],
     price:{
         type:Number,
         required:true,

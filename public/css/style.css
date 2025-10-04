@@ -143,3 +143,12 @@ footer{
     .btn-save:hover {
       background: #ff1900 !important;
     }
+
+  .carousel-item img {
+  height: 350px;
+  object-fit: cover;
+}
+
+.thumbnail-img:hover {
+  border: 2px solid #ffc107;
+}

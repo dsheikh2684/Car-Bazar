@@ -7,11 +7,20 @@ const {listingSchema}=require("../schema.js");
 const ExpressError=require("../utils/expressError.js");
 const {isLoggedIn,validateListing}=require("../middleware.js");
 const listingController=require("../controllers/listingController.js");
-
+const multer=require("multer");
+const { storage } = require("../cloudConfig.js");
+const upload=multer({ storage });
 //listing route
 router.route("/")
     .get(asyncWrap(listingController.listings))
-    .post(validateListing,asyncWrap(listingController.save));
+    .post(validateListing,upload.array("listing[images]",6),asyncWrap(listingController.save));
+    // .post(upload.array("listing[images]"),(req,res)=>{
+    //     console.log("Requested");
+    //     console.log(req.body);
+    //     console.log(req.files);
+    //     res.send(req.file);
+    // })
+
     
 //add car route
 router.route("/new")
@@ -20,7 +29,7 @@ router.route("/new")
 //show update and delete route
 router.route("/:id")
     .get(asyncWrap(listingController.show))
-    .put(validateListing,asyncWrap(listingController.update))
+    .put(validateListing,upload.array("listing[images]",6),asyncWrap(listingController.update))
     .delete(isLoggedIn,asyncWrap(listingController.destroyListing));
 
 //edit route

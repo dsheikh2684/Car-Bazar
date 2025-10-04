@@ -5,6 +5,7 @@
   "author": "Danish Khan",
   "license": "ISC",
   "dependencies": {
+    "@cloudinary/react": "^1.14.3",
     "connect-flash": "^0.1.1",
     "dotenv": "^17.2.2",
     "ejs": "^3.1.10",
@@ -14,6 +15,8 @@
     "joi": "^18.0.1",
     "method-override": "^3.0.0",
     "mongoose": "^8.18.0",
+    "multer": "^2.0.2",
+    "multer-storage-cloudinary": "^4.0.0",
     "node": "^24.6.0",
     "nodemon": "^3.1.10",
     "passport": "^0.7.0",

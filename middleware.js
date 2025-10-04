@@ -1,5 +1,5 @@
 const {listingSchema}=require("./schema.js");
-
+const ExpressError = require("./utils/expressError.js");
 module.exports.isLoggedIn=((req,res,next)=>{
     if(!req.isAuthenticated()){
         req.session.redirectUrl=req.originalUrl;
@@ -18,9 +18,11 @@ module.exports.saveUrl=(req,res,next)=>{
 }
 
 module.exports.validateListing=(req,res,next)=>{
+    console.log(req.body);
     let {error}=listingSchema.validate(req.body);
     // console.log(result.error);
     if(error){
+        console.log(error);
         throw new ExpressError(400,error);
     }
     else{

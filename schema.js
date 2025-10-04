@@ -12,7 +12,12 @@ module.exports.listingSchema=joi.object({
         owner:joi.string().required(),
         insurance:joi.string().required(),
         i_expiry:joi.date().required(),
-        image:joi.string().allow("",null),
+        images: joi.array().items(
+    joi.object({
+      url: joi.string().uri().required(),
+      filename: joi.string().required()
+    })
+  ).required(),
         price:joi.number().required().min(1),
     }).required()
 });

@@ -4,15 +4,40 @@
     <div class="row g-4">
       
       <!-- Car Image -->
-      <div class="col-lg-6">
-        <img src="<%=data.image%>" alt="Car Image" class="car-image">
+      <div class="col-lg-6 mb-4">
+      <div id="carImagesCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <% data.images.forEach((img, index) => { %>
+            <div class="carousel-item <%= index === 0 ? 'active' : '' %>">
+              <img src="<%= img.url %>" class="d-block w-100 rounded" alt="Car Image">
+            </div>
+          <% }) %>
+        </div>
+
+        <!-- Carousel controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carImagesCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carImagesCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
+
+      <!-- Thumbnails -->
+      <div class="d-flex justify-content-center flex-wrap gap-2 mt-2">
+        <% data.images.forEach((img, index) => { %>
+          <img src="<%= img.url %>" class="thumbnail-img rounded" style="width: 80px; height: 60px; object-fit: cover; cursor: pointer;" data-bs-target="#carImagesCarousel" data-bs-slide-to="<%= index %>">
+        <% }) %>
+      </div>
+    </div>
 
       <!-- Car Details -->
       <div class="col-md-6">
         <div class="car-details">
         <div class="container mt-4">
-  <form class="update-form needs-validation" novalidate method="POST" action="/listings/<%=data._id%>?_method=PUT">
+  <form class="update-form needs-validation" novalidate method="POST" action="/listings/<%=data._id%>?_method=PUT" enctype="multipart/form-data">
     <!-- Full width -->
     <div class="mb-1">
       <label for="name" class="form-label">Car Brand</label>
@@ -24,9 +49,10 @@
       <input type="text" class="form-control" id="model" name="listing[model]" value="<%=data.model%>">
     </div>
     <div class="mb-1">
-      <label for="image" class="form-label">Image Url</label>
-      <input type="text" class="form-control" id="image" name="listing[image]" value="<%=data.image%>" required>
-    </div>
+        <label class="form-label" for="image">Image URL</label>
+        <input type="file" name="listing[images]" id="image" class="form-control" placeholder="Choose Image" multiple accept="image/*">
+      </div>
+    <input type="hidden" name="replaceImages" value="true">
     <!-- Two per row -->
     <div class="row">
       <div class="col-md-6">

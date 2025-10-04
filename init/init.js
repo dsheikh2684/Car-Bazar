@@ -12,7 +12,12 @@ const data = [
     owner: "First",
     insurance: "Not Available",
     i_expiry: "2032-11-12",
-    image: "https://avgmotors.co.in/wp-content/uploads/2022/03/Mettallic-Magma-Grey-876x535.png",
+    images: [
+      {
+        url: "https://avgmotors.co.in/wp-content/uploads/2022/03/Mettallic-Magma-Grey-876x535.png",
+        filename: "Car_Bazar_Listings"
+      }
+    ],
     price: 350000
   },
   {
@@ -25,7 +30,12 @@ const data = [
     owner: "First",
     insurance: "Not Available",
     i_expiry: "2032-11-12",
-    image: "https://imgd.aeplcdn.com/664x374/n/cw/ec/150603/i20-exterior-right-front-three-quarter-7.jpeg?isig=0&q=80",
+    images: [
+      {
+        url: "https://imgd.aeplcdn.com/664x374/n/cw/ec/150603/i20-exterior-right-front-three-quarter-7.jpeg?isig=0&q=80",
+        filename: "Car_Bazar_Listings"
+      }
+    ],
     price: 520000
   },
   {
@@ -38,7 +48,12 @@ const data = [
     owner: "First",
     insurance: "Not Available",
     i_expiry: "2032-11-12",
-    image: "https://ackodrive-assets.ackodrive.com/media/test_2pvxUvJ.png",
+    images: [
+      {
+        url: "https://ackodrive-assets.ackodrive.com/media/test_2pvxUvJ.png",
+        filename: "Car_Bazar_Listings"
+      }
+    ],
     price: 780000
   },
   {
@@ -51,7 +66,12 @@ const data = [
     owner: "First",
     insurance: "Not Available",
     i_expiry: "2032-11-12",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFkmURMoKz_0xcQPqPUkcvLnzMdqMlRHAk0A&s",
+    images: [
+      {
+        url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFkmURMoKz_0xcQPqPUkcvLnzMdqMlRHAk0A&s",
+        filename: "Car_Bazar_Listings"
+      }
+    ],
     price: 1200000
   },
   {
@@ -64,7 +84,12 @@ const data = [
     owner: "First",
     insurance: "Not Available",
     i_expiry: "2032-11-12",
-    image: "https://www.ppsford.com/uploads/gallery/1622731952_pps-ford-ecosport-smoke-grey.webp",
+    images: [
+      {
+        url: "https://www.ppsford.com/uploads/gallery/1622731952_pps-ford-ecosport-smoke-grey.webp",
+        filename: "Car_Bazar_Listings"
+      }
+    ],
     price: 650000
   },
   {
@@ -77,7 +102,12 @@ const data = [
     owner: "First",
     insurance: "Not Available",
     i_expiry: "2032-11-12",
-    image: "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202009/Tata_Nexon_XM_S_.png",
+    images: [
+      {
+        url: "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202009/Tata_Nexon_XM_S_.png",
+        filename: "Car_Bazar_Listings"
+      }
+    ],
     price: 580000
   },
   {
@@ -90,7 +120,12 @@ const data = [
     owner: "First",
     insurance: "Not Available",
     i_expiry: "2032-11-12",
-    image: "https://imgd.aeplcdn.com/1280x720/cw/cars/discontinued/mahindra/xuv500-2011-2015.jpg?q=80",
+    images: [
+      {
+        url: "https://imgd.aeplcdn.com/1280x720/cw/cars/discontinued/mahindra/xuv500-2011-2015.jpg?q=80",
+        filename: "Car_Bazar_Listings"
+      }
+    ],
     price: 1100000
   },
   {
@@ -103,7 +138,12 @@ const data = [
     owner: "First",
     insurance: "Not Available",
     i_expiry: "2032-11-12",
-    image: "https://imgd.aeplcdn.com/664x374/cw/specialVersions/5435.jpg?v=20180309060021&q=80",
+    images: [
+      {
+        url: "https://imgd.aeplcdn.com/664x374/cw/specialVersions/5435.jpg?v=20180309060021&q=80",
+        filename: "Car_Bazar_Listings"
+      }
+    ],
     price: 490000
   },
   {
@@ -116,7 +156,12 @@ const data = [
     owner: "First",
     insurance: "Not Available",
     i_expiry: "2032-11-12",
-    image: "https://images.overdrive.in/wp-content/odgallery/2022/03/61583_2022_Renault_Kwid_468x263.jpg",
+    images: [
+      {
+        url: "https://images.overdrive.in/wp-content/odgallery/2022/03/61583_2022_Renault_Kwid_468x263.jpg",
+        filename: "Car_Bazar_Listings"
+      }
+    ],
     price: 280000
   },
   {
@@ -129,7 +174,12 @@ const data = [
     owner: "First",
     insurance: "Not Available",
     i_expiry: "2032-11-12",
-    image: "https://imgd.aeplcdn.com/664x374/cw/cars/discontinued/skoda/rapid-2011-2014.jpg?q=80",
+    images: [
+      {
+        url: "https://imgd.aeplcdn.com/664x374/cw/cars/discontinued/skoda/rapid-2011-2014.jpg?q=80",
+        filename: "Car_Bazar_Listings"
+      }
+    ],
     price: 620000
   },
   {
@@ -142,7 +192,12 @@ const data = [
     owner: "First",
     insurance: "Not Available",
     i_expiry: "2032-11-12",
-    image: "https://imgd.aeplcdn.com/0x0/ec/0C/48/13637/img/m/2014-Chevrolet-Beat-28351_l.jpg?q=75",
+    images: [
+      {
+        url: "https://imgd.aeplcdn.com/0x0/ec/0C/48/13637/img/m/2014-Chevrolet-Beat-28351_l.jpg?q=75",
+        filename: "Car_Bazar_Listings"
+      }
+    ],
     price: 220000
   },
   {
@@ -155,7 +210,12 @@ const data = [
     owner: "First",
     insurance: "Not Available",
     i_expiry: "2032-11-12",
-    image: "https://imgd.aeplcdn.com/1056x594/n/3g499sa_1463606.jpg?q=80",
+    images: [
+      {
+        url: "https://imgd.aeplcdn.com/1056x594/n/3g499sa_1463606.jpg?q=80",
+        filename: "Car_Bazar_Listings"
+      }
+    ],
     price: 330000
   },
   {
@@ -168,7 +228,12 @@ const data = [
     owner: "First",
     insurance: "Not Available",
     i_expiry: "2032-11-12",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjwW5hoGW8NaoJP2C_xui61j-5OODZSJiuMA&s",
+    images: [
+      {
+        url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjwW5hoGW8NaoJP2C_xui61j-5OODZSJiuMA&s",
+        filename: "Car_Bazar_Listings"
+      }
+    ],
     price: 720000
   },
   {
@@ -181,7 +246,12 @@ const data = [
     owner: "First",
     insurance: "Not Available",
     i_expiry: "2032-11-12",
-    image: "https://imgd.aeplcdn.com/664x374/n/cw/ec/102663/baleno-exterior-right-front-three-quarter-64.jpeg?isig=0&q=80",
+    images: [
+      {
+        url: "https://imgd.aeplcdn.com/664x374/n/cw/ec/102663/baleno-exterior-right-front-three-quarter-64.jpeg?isig=0&q=80",
+        filename: "Car_Bazar_Listings"
+      }
+    ],
     price: 560000
   },
   {
@@ -194,7 +264,12 @@ const data = [
     owner: "First",
     insurance: "Not Available",
     i_expiry: "2032-11-12",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwqleb87QCoCuTLqwRmMtrBeGO3OSrXP1K8w&s",
+    images: [
+      {
+        url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwqleb87QCoCuTLqwRmMtrBeGO3OSrXP1K8w&s",
+        filename: "Car_Bazar_Listings"
+      }
+    ],
     price: 480000
   },
   {
@@ -207,7 +282,12 @@ const data = [
     owner: "First",
     insurance: "Not Available",
     i_expiry: "2032-11-12",
-    image: "https://imgd.aeplcdn.com/1280x720/cw/cars/toyota/corolla-altis.jpg?q=80",
+    images: [
+      {
+        url: "https://imgd.aeplcdn.com/1280x720/cw/cars/toyota/corolla-altis.jpg?q=80",
+        filename: "Car_Bazar_Listings"
+      }
+    ],
     price: 850000
   },
   {
@@ -220,7 +300,12 @@ const data = [
     owner: "First",
     insurance: "Not Available",
     i_expiry: "2032-11-12",
-    image: "https://imgd.aeplcdn.com/1056x594/n/vevpl4a_1525229.jpg?q=80",
+    images: [
+      {
+        url: "https://imgd.aeplcdn.com/1056x594/n/vevpl4a_1525229.jpg?q=80",
+        filename: "Car_Bazar_Listings"
+      }
+    ],
     price: 370000
   },
   {
@@ -233,7 +318,12 @@ const data = [
     owner: "First",
     insurance: "Not Available",
     i_expiry: "2032-11-12",
-    image: "https://stimg.cardekho.com/images/carexteriorimages/930x620/Tata/Harrier/9368/1755844894060/front-left-side-47.jpg",
+    images: [
+      {
+        url: "https://stimg.cardekho.com/images/carexteriorimages/930x620/Tata/Harrier/9368/1755844894060/front-left-side-47.jpg",
+        filename: "Car_Bazar_Listings"
+      }
+    ],
     price: 1250000
   },
   {
@@ -246,7 +336,12 @@ const data = [
     owner: "First",
     insurance: "Not Available",
     i_expiry: "2032-11-12",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQT2d5edsC6set8uca__WCRdRceqbVPBaWiA&s",
+    images: [
+      {
+        url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQT2d5edsC6set8uca__WCRdRceqbVPBaWiA&s",
+        filename: "Car_Bazar_Listings"
+      }
+    ],
     price: 950000
   },
   {
@@ -259,10 +354,16 @@ const data = [
     owner: "First",
     insurance: "Not Available",
     i_expiry: "2032-11-12",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBO4zdaY5o3qa3oxMX_iEuz2XT_gR4iphmKg&s",
+    images: [
+      {
+        url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBO4zdaY5o3qa3oxMX_iEuz2XT_gR4iphmKg&s",
+        filename: "Car_Bazar_Listings"
+      }
+    ],
     price: 1350000
   }
 ];
+
 
 
 
